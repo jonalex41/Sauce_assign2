@@ -16,18 +16,18 @@ class checkOutPg {
     // get cartCount () { return $('span.shopping_cart_badge') }
 
     async cartHasItems (numItems) {
-        // browser.pause(500)
+        browser.pause(500)
         expect(this.cartList).toHaveChildren(numItems + 2)
     }
 
     async checkout () {
-        // browser.pause(500)
+        browser.pause(500)
         expect(this.shpBtn).toBeClickable()
         this.shpBtn.click()
-        // browser.pause(500)
+        browser.pause(500)
         expect(this.contBtn).toBeClickable()
         this.contBtn.click()
-        // browser.pause(500)
+        browser.pause(500)
     }
 
 }

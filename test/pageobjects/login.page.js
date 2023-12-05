@@ -24,9 +24,9 @@ class LoginPage extends Page {
     async login (username, password) {
         await this.setUsername.setValue(username)
         await this.setPassword.setValue(password)
-        // await browser.pause(300)
+        await browser.pause(300)
         await this.clkSubmit.click()
-        // await browser.pause(300)
+        await browser.pause(300)
     }
     /**
      * async. badUsers: tests an array of users that should not be able to login
@@ -57,7 +57,7 @@ class LoginPage extends Page {
 
     async goodUser (user, pass) {
         await this.open('')
-        // await browser.pause(500)
+        await browser.pause(500)
         await expect(this.loginLogo).toExist()
         await this.login(user, pass)
         await expect($('div.inventory_list')).toHaveChildren(6)
