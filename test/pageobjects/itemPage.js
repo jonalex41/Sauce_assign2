@@ -17,17 +17,17 @@ class itemPage {
 
     async addItem (cssSelector, items) {
         this.selector = 'button#add-to-cart-sauce-labs-' + cssSelector;
-        await browser.pause(300)
+        // await browser.pause(300)
         await this.itemButton.click()
-        await browser.pause(300)
+        // await browser.pause(300)
         await expect($('//span[@class="shopping_cart_badge"]')).toHaveText(items)
     }
 
     async removeItem (cssSelector, items) {
         this.selector = 'button#remove-sauce-labs-' + cssSelector;
-        await browser.pause(300)
+        // await browser.pause(300)
         await this.itemButton.click()
-        await browser.pause(300)
+        // await browser.pause(300)
         await expect($('//span[@class="shopping_cart_badge"]')).toHaveText(items)
     }
 

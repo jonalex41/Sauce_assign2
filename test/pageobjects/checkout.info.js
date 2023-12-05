@@ -22,32 +22,32 @@ class checkoutInfo {
     // get cartCount () { return $('span.shopping_cart_badge') }
 
     async fillInfoCont (first, last, zip) {
-        await browser.pause(400)
+        // await browser.pause(400)
         await this.first.setValue(first)
         await this.contBtn()
-        await browser.pause(400)
+        // await browser.pause(400)
         await this.last.setValue(last)
         await this.contBtn()
-        await browser.pause(400)
+        // await browser.pause(400)
         await this.post.setValue(zip)
-        await browser.pause(400)
+        // await browser.pause(400)
         await this.conBtn.click()
-        await browser.pause(500)
+        // await browser.pause(500)
         await expect(this.cartList).toExist()
         await this.clkFinish()
-        await browser.pause(500)
+        // await browser.pause(500)
         await expect(this.thnkMsg).toHaveTextContaining('Thank you for your order!')
     }
 
     async contBtn () {
-        await browser.pause(400) 
+        // await browser.pause(400) 
         await this.conBtn.click()
         await expect(this.errorBox).toHaveTextContaining('Error:')     
     }
 
     async clkFinish() {
         await expect(this.finish).toBeClickable()
-        await browser.pause(500)
+        // await browser.pause(500)
         await this.finish.click()
     }
 
