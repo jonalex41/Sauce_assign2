@@ -20,7 +20,12 @@ class checkoutInfo {
     get finish () { return $('button#finish') }
     get thnkMsg () { return $('//div[@id="checkout_complete_container"]/h2') }
     // get cartCount () { return $('span.shopping_cart_badge') }
-
+/**
+ * fills in the values for the checkout fields, and continues..
+ * @param {} first first name for the checkout field
+ * @param {} last  last name for the checkout field
+ * @param {} zip zip code for the checkout field
+ */
     async fillInfoCont (first, last, zip) {
         await browser.pause(400)
         await this.first.setValue(first)

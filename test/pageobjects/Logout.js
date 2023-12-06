@@ -25,7 +25,7 @@ class logout {
 
     async backIn () {
         await browser.url('https://www.saucedemo.com/inventory.html')
-        await browser.pause(1000)
+        await browser.pause(500)
         await expect(this.error).toHaveTextContaining('Epic sadface: You can only access \'/inventory.html\' when you are logged in.')
     }
 

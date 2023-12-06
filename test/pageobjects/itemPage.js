@@ -20,9 +20,9 @@ class itemPage {
  */
     async addItem (cssSelector, items) {
         this.selector = 'button#add-to-cart-sauce-labs-' + cssSelector;
-        // await browser.pause(300)
+        await browser.pause(300)
         await this.itemButton.click()
-        // await browser.pause(300)
+        await browser.pause(300)
         await expect($('//span[@class="shopping_cart_badge"]')).toHaveText(items)
     }
 /**
@@ -37,9 +37,15 @@ class itemPage {
         await expect($('//span[@class="shopping_cart_badge"]')).toHaveText(items)
     }
 
-    async shoppingCart () {
-
+    async addRemoveItems() {
+        await this.addItem('backpack', '1')
+        await this.addItem('bike-light', '2')
+        await this.removeItem('backpack', '1')
     }
+
+    // async shoppingCart () {
+    // browser.pause()
+    // }
 
 }
 

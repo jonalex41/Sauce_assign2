@@ -19,7 +19,9 @@ class checkOutPg {
         browser.pause(500)
         expect(this.cartList).toHaveChildren(numItems + 2)
     }
-
+/**
+ * navigates throught the initial checkout screens
+ */
     async checkout () {
         browser.pause(500)
         expect(this.shpBtn).toBeClickable()

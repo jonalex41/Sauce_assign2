@@ -5,14 +5,15 @@ import checkOutPg from '../pageobjects/checkout.cart.js'
 import checkoutInfo from '../pageobjects/checkout.info.js'
 import logout from '../pageobjects/Logout.js'
 
-// import { browser } from '@wdio/globals'
+/**
+ * User walkthrough test for logging in, adding and removing items from the cart,
+ * checking out, and logging out.
+ */
 
 describe('Walkthrough, login, add items, checkout, and logout', () => {
     it('walkthrough a single user experience', async () => {
         await loginPage.goodUser('standard_user', 'secret_sauce')
-        await itemPage.addItem('backpack', '1')
-        await itemPage.addItem('bike-light', '2')
-        await itemPage.removeItem('backpack', '1')
+        await itemPage.addRemoveItems()
         await checkOutPg.cartHasItems(1)
         await checkOutPg.checkout()
         await checkoutInfo.fillInfoCont('Theadore', 'Rosevelt', '84068')
